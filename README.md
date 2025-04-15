@@ -29,6 +29,11 @@ npm install @gsap/react
 npm install tailwindcss @tailwindcss/vite
 ```
 
+Para que se pueda usar en github pages
+```bash
+npm install --save-dev gh-pages
+```
+
 ## vite.config.js
 
 ```js
