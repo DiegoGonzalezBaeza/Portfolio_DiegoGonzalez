@@ -48,64 +48,34 @@ const Hero = () => {
 
             </div>
 
-            <div className="hero-layout">
-                {/* {LEFT: HERO CONTENT} */}
-                <header className="flex flex-col justify-center md:w-full w-screen md:px-20 px-5">
-                    <div className="flex flex-col gap-7">
-                        <div className="hero-text">
-                            <h1>Shaping 
-                                <span className="slide">
-                                    <span className="wrapper">
-                                        {words.map((word) => (
-                                            <span key={word.text} className="flex items-center md:gap-3 gap-1 pb2">
-                                                <img 
-                                                    src={word.imgPath}
-                                                    alt={word.text}
-                                                    className="xl:size-12 md:size-10 size-7 md:p2 p-1 rounded-full bg-white-50">
-                                                </img>
-                                                <span>{word.text}</span>
-                                            </span>
-                                        ))}
+<div className="hero-layout pt-70 min-h-[100vh]">
+    <header className="flex flex-col justify-start md:w-full w-screen md:px-20 px-5">
+        <div className="flex flex-col gap-7">
+            <div className="hero-text mt-16">
+                <h1>Integrando 
+                    <span className="slide">
+                        <span className="wrapper">
+                            {words.map((word) => (
+                                <span key={word.text} className="flex items-center md:gap-3 gap-1 pb2">
+                                    <img 
+                                        src={word.imgPath}
+                                        alt={word.text}
+                                        className="xl:size-12 md:size-10 size-7 md:p2 p-1 rounded-full bg-white-50">
+                                    </img>
+                                    <span>{word.text}</span>
                                 </span>
-                                </span>
-                            </h1>
-                            <h1>into Real Projects</h1>
-                            <h1>that Deliver Results</h1>
-                        </div>
-
-                    </div>
-                </header>
-                {/* {RIGHT: 3D MODEL} */}
-
-                <header className="flex flex-col justify-center md:w-full w-screen md:px-20 px-5">
-                    <div className="flex flex-col gap-7">
-                        <div className="hero-text">
-                            <h1>Shaping 
-                                <span className="slide">
-                                    <span className="wrapper">
-                                        {words.map((word) => (
-                                            <span key={word.text} className="flex items-center md:gap-3 gap-1 pb2">
-                                                <img 
-                                                    src={word.imgPath}
-                                                    alt={word.text}
-                                                    className="xl:size-12 md:size-10 size-7 md:p2 p-1 rounded-full bg-white-50">
-                                                </img>
-                                                <span>{word.text}</span>
-                                            </span>
-                                        ))}
-                                </span>
-                                </span>
-                            </h1>
-                            <h1>into Real Projects</h1>
-                            <h1>that Deliver Results</h1>
-                        </div>
-
-                    </div>
-                </header>
-
-
-
+                            ))}
+                        </span>
+                    </span>
+                </h1>
+                <h1>en cada línea de código</h1>
+                <h1>y cada experiencia creada.</h1>
             </div>
+        </div>
+    </header>
+
+    {/* Right model */}
+</div>
 
         </section>
     )

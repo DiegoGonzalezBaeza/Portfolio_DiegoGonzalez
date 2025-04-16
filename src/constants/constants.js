@@ -1,6 +1,7 @@
 import ideaImg from '/images/ideas.svg'
 import designsImg from '/images/designs.svg'
 import codeImg from '/images/code.svg'
+import conceptsImg from '/images/concepts.svg'
 
 const navLinks = [
     {
@@ -23,13 +24,9 @@ const navLinks = [
 
 const words = [
     { text: 'Ideas', imgPath: ideaImg },
-    { text: 'Creatividad', imgPath: designsImg },
-    { text: 'Análisis', imgPath: codeImg },
-    { text: 'Ideas', imgPath: '/images/ideas.svg' },
-    { text: 'Creatividad', imgPath: "/images/ideas.svg" },
-    { text: 'Análisis', imgPath: '/images/ideas.svg' },
-    { text: 'Ideas', imgPath: '/images/ideas.svg' },
-    { text: 'Creatividad', imgPath: "/images/ideas.svg" },
+    { text: 'Análisis', imgPath: designsImg },
+    { text: 'Ingenio', imgPath: conceptsImg },
+    { text: 'Diseño', imgPath: codeImg }
 ]
 
 export {

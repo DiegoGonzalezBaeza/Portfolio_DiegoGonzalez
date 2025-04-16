@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import { words } from "../../constants/constants.js";
+import Sketch1 from '../../js/app2.js';
 import Sketch from '../../js/app.js';
 
 const Contact = () => { 
+    const containerRef2 = useRef(null);
     const containerRef = useRef(null);
         
       // Usamos useRef para tener una referencia al contenedor de la animación
@@ -11,17 +13,48 @@ const Contact = () => {
       // Inicializamos la animación cuando el componente se haya montado
       useEffect(() => {
         // Solo corre cuando el contenedor ya está montado en el DOM
-        if (containerRef.current) {
+        if (containerRef2.current) {
           console.log('Iniciando Sketch...');
-          new Sketch({ dom: containerRef.current });
+          new Sketch1({ dom: containerRef2.current });
     
          }
+
+         if (containerRef.current) {
+            console.log('Iniciando Sketch...');
+            new Sketch({ dom: containerRef.current });
+      
+           }
       }, []);
     return (
-        <section id="hero" className="relative overflow-hidden">
+        <section id="hero" className="relative overflow-hidden ">
             <div className="absolute top-0 left-0 z-10">
 
                       {/* Este div es donde se cargará la animación */}
+                        <div 
+                            ref={containerRef2}
+                            className="background-animation" 
+                            style={{
+                                transform: 'rotateX(70deg) rotatey(45deg)'
+                            // width: '100vw',
+                            // height: '100vh',
+                            // position: 'absolute',
+                            // top: '0',
+                            // left: '0',
+                            // // background: '#111', // temporal para verificar
+                            // overflow: 'hidden',
+                            // zIndex: -1,
+
+
+                            // width: '100vw',
+                            // height: '100vh',
+                            // position: 'absolute',
+                            // top: 0,
+                            // left: 0,
+                            // zIndex: -1, // Pone la animación en el fondo
+                            // overflow: 'hidden',
+                            }}
+                        ></div>
+
                         <div 
                             ref={containerRef}
                             className="background-animation" 

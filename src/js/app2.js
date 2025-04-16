@@ -4,7 +4,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
 import fragment from './shader/fragment.glsl';
-import vertex from './shader/vertexParticles.glsl';
+import vertex from './shader/vertexParticles2.glsl';
 
 import simFragment from './shader/simFragment.glsl';
 import simVertex from './shader/simVertex.glsl';
@@ -12,7 +12,7 @@ import simVertex from './shader/simVertex.glsl';
 import GUI from 'lil-gui';
 import gsap from 'gsap';
 
-export default class Sketch {
+export default class Sketch1 {
     constructor(options) {
         this.scene = new THREE.Scene();
 
@@ -38,7 +38,7 @@ export default class Sketch {
         this.container.appendChild(this.renderer.domElement);
 
         let aspect = this.width / this.height;
-        let frustumSize = 5; // ajusta según lo que necesites ver
+        let frustumSize = 3; // ajusta según lo que necesites ver
         
         this.camera = new THREE.OrthographicCamera(
             -frustumSize * aspect / 2,
@@ -126,7 +126,7 @@ export default class Sketch {
 
 
     setupFBO() {
-        this.size = 256;
+        this.size = 384;
         this.fbo = this.getRenderTarget();
         this.fbo1 = this.getRenderTarget();
 
@@ -219,7 +219,7 @@ export default class Sketch {
         this.renderer.setSize(this.width, this.height);
     
         let aspect = this.width / this.height;
-        let frustumSize = 5; // usa el mismo valor que antes
+        let frustumSize = 3; // usa el mismo valor que antes
     
         this.camera.left = -frustumSize * aspect / 2;
         this.camera.right = frustumSize * aspect / 2;
@@ -339,7 +339,7 @@ export default class Sketch {
 
 }
 
-new Sketch({
+new Sketch1({
     dom: document.getElementById("container")
 });
 
