@@ -1,36 +1,36 @@
 import React, { useState, useEffect, useRef } from "react";
 import { words } from "../../constants/constants.js";
-import Sketch1 from '../../js/app2.js';
-import Sketch from '../../js/app.js';
+// import Sketch1 from '../../js/app2.js';
+// import Sketch from '../../js/app.js';
 
 const Contact = () => { 
-    const containerRef2 = useRef(null);
-    const containerRef = useRef(null);
+    // const containerRef2 = useRef(null);
+    // const containerRef = useRef(null);
         
-      // Usamos useRef para tener una referencia al contenedor de la animación
+    //   // Usamos useRef para tener una referencia al contenedor de la animación
     
     
-      // Inicializamos la animación cuando el componente se haya montado
-      useEffect(() => {
-        // Solo corre cuando el contenedor ya está montado en el DOM
-        if (containerRef2.current) {
-          console.log('Iniciando Sketch...');
-          new Sketch1({ dom: containerRef2.current });
+    //   // Inicializamos la animación cuando el componente se haya montado
+    //   useEffect(() => {
+    //     // Solo corre cuando el contenedor ya está montado en el DOM
+    //     if (containerRef2.current) {
+    //       console.log('Iniciando Sketch...');
+    //       new Sketch1({ dom: containerRef2.current });
     
-         }
+    //      }
 
-         if (containerRef.current) {
-            console.log('Iniciando Sketch...');
-            new Sketch({ dom: containerRef.current });
+    //      if (containerRef.current) {
+    //         console.log('Iniciando Sketch...');
+    //         new Sketch({ dom: containerRef.current });
       
-           }
-      }, []);
+    //        }
+    //   }, []);
     return (
         <section id="hero" className="relative overflow-hidden ">
             <div className="absolute top-0 left-0 z-10">
 
                       {/* Este div es donde se cargará la animación */}
-                        <div 
+                        {/* <div 
                             ref={containerRef2}
                             className="background-animation" 
                             style={{
@@ -77,7 +77,7 @@ const Contact = () => {
                             // zIndex: -1, // Pone la animación en el fondo
                             // overflow: 'hidden',
                             }}
-                        ></div>
+                        ></div> */}
 
             </div>
 
