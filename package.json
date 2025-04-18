@@ -13,12 +13,15 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@gsap/react": "^2.1.2",
     "@tailwindcss/vite": "^4.1.4",
+    "framer-motion": "^12.7.4",
     "gsap": "^3.12.7",
     "lil-gui": "^0.20.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-parallax-tilt": "^1.7.291",
     "tailwindcss": "^4.1.4",
     "three": "^0.175.0",
     "vite-plugin-glsl": "^1.4.0"

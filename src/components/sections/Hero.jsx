@@ -18,7 +18,7 @@ const Hero = () => {
          }
       }, []);
     return (
-        <section id="hero" className="relative overflow-hidden">
+        <section id="hero" className="relative overflow-hidden padding-x">
             <div className="absolute top-0 left-0 z-10">
 
                       {/* Este div es donde se cargará la animación */}
@@ -26,11 +26,11 @@ const Hero = () => {
                             ref={containerRef}
                             className="background-animation" 
                             style={{
-                            // width: '100vw',
+                             width: '100vw',
                             // height: '100vh',
                             // position: 'absolute',
                             // top: '0',
-                            // left: '0',
+                             left: '0',
                             // // background: '#111', // temporal para verificar
                             // overflow: 'hidden',
                             // zIndex: -1,
@@ -51,7 +51,7 @@ const Hero = () => {
 <div className="hero-layout pt-70 min-h-[100vh]">
     <header className="flex flex-col justify-start md:w-full w-screen md:px-20 px-5">
         <div className="flex flex-col gap-7">
-            <div className="hero-text mt-16">
+            <div className="hero-text">
                 <h1>Integrando 
                     <span className="slide">
                         <span className="wrapper">

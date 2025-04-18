@@ -17,6 +17,8 @@
   
 }
 
+
+
 html {
   width: 100dvw;
   scroll-snap-type: y mandatory;
@@ -43,6 +45,7 @@ section {
   /* display: block; */
   /* margin: 0 auto; */
 }
+
 
 @theme {
   --font-sans: "Mona Sans", sans-serif;
@@ -135,7 +138,7 @@ section {
   }
 
   .hero-text {
-    @apply flex flex-col justify-center md:text-[50px] text-[30px] font-semibold relative z-10 pointer-events-none mt-16 md:mt-40;
+    @apply flex flex-col justify-center md:text-[50px] text-[30px] font-semibold relative z-10 pointer-events-none mt-2 md:mt-1;
     img {
       @apply size-8 md:size-10 object-contain;
     }
@@ -292,9 +295,9 @@ section {
     @apply absolute top-0 xl:left-[35.5vw] md:left-10 left-5 h-full flex justify-center;
   }
 
-  .timeline {
+  /* .timeline {
     @apply absolute z-30 h-[110%] -top-10 w-14 md:w-28 bg-black;
-  }
+  } */
 
   .timeline-logo {
     @apply md:size-20 size-10 flex-none rounded-full flex justify-center items-center md:-translate-y-7 border border-black-50 bg-black-100;
@@ -509,6 +512,208 @@ section {
 .card:hover::before {
   opacity: 1;
 }
+
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+/* lllll*/
+
+  /* Estilos para la línea de tiempo */
+  .timeline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 150px 0;
+    position: relative;
+    margin-bottom: 80px;
+  }
+
+  /* Estilos para la línea trazada */
+  .timeline::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #69b3a2;
+    top: 50%;
+    left: 0;
+    z-index: 0;
+  }
+
+  /* Estilos para los puntos interactivos */
+  .timeline-point {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background-color: #69b3a2;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+    z-index: 1;
+    transform: translateX(-50%);
+  }
+
+  .timeline-point .timeline-year {
+    font-size: 14px;
+    text-align: center;
+    color: #000;
+    margin-top: 5px;
+  }
+
+  .timeline-point.active {
+    background-color: #23a079;
+  }
+
+  /* Estilos para el título debajo de cada punto */
+  .point-title {
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    margin-bottom: 5px;
+    color: #ffffff;
+    position: absolute;
+    bottom: 25px; /* Alinea el título por arriba del punto */
+    left: 50%; /* Centra el título horizontalmente */
+    transform: translateX(-50%);
+    font-weight:600;
+  }
+
+  /* Estilos para el punto interactivo sin descripción */
+  .timeline-point .point-content{
+    position: relative;
+    background-color: #69b3a2;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative; /* Para ajustar la posición en la línea */
+    z-index: 1; /* Coloca los puntos sobre la línea */
+    transform: translateX(-50%); /* Centra los puntos en la línea */
+  }
+
+
+  @keyframes fadeInImage {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .timeline-point .certificate-image {
+    display: none;
+    background-color: #ffffff;
+    max-width: 220px; /* Ajusta el tamaño de la imagen */
+    height: 180px;
+    position: absolute;
+    top: 50px; /* Alinea la imagen por debajo del punto */
+    left: 50%; /* Centra la imagen horizontalmente */
+    transform: translateX(-50%);
+    box-shadow: 0px 5px 10px rgba(73, 239, 92, 0.2); /* Agrega una sombra para la profundidad */
+    transition: all 0.3s ease; /* Agregamos transición para suavizar el cambio de tamaño */
+  }
+
+  /* Estilos para la imagen al final de la línea vertical */
+  .timeline-point.active .certificate-image {
+    display: block;
+    max-width: 310px; /* Tamaño más grande al hacer hover */
+    height: 280px;
+    top: 100px; /* Alinea la imagen al final de la línea vertical */
+    left: 80%; /* Centra la imagen horizontalmente */
+    transform: translateX(-50%);
+    opacity: 1;
+    z-index: 50;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4); /* Cambia la sombra al hacer hover */
+    animation: fadeInImage 0.5s ease; /* Duración y efecto de la animación */
+  }
+
+  .timeline-point.active .point-title {
+    color:#69b3a2
+  }
+
+  @keyframes expandLine {
+    0% {
+      height: 0;
+    }
+    100% {
+      height: 70px; /* Ajusta la altura deseada */
+    }
+  }
+
+  /* Estilos para la línea vertical descendente */
+  .timeline-point.active::before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 70px;
+    background-color: #69b3a2;
+    top: 100%; /* Coloca la línea debajo del punto */
+    left: 50%; /* Centra la línea horizontalmente */
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: expandLine 0.5s ease; /* Duración y efecto de la animación */
+  }
+
+  .timeline-point.active::before {
+    display: block;
+    opacity: 1;
+  }
+
+  .arrowlanding {
+    color: black;
+    position: absolute;
+    top: 100%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    max-width: 600px;
+    padding: 2em 3em;
+    min-height: 30%;
+  }
+
+  .modal-education {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    backdrop-filter: blur(3px); 
+  }
+
+  .modal-education-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    justify-content: center;
+    align-items: center;
+    position: absolute; /* Needed for top: 50% and left: 50% to work */
+    top: 50%;
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center both vertically and horizontally */
+  }
+
+  .close-education {
+    color: #69b3a2;
+    float: right;
+    font-size: 42px;
+    font-weight: bold;
+  }
+  
+  .certificate-modal-image {
+    width: 200px;
+    height: 200px;
+    background-color: #ffffff;
+  }
+
+
 
 
 /* 
