@@ -4,6 +4,7 @@ import codeImg from '/images/code.svg'
 import conceptsImg from '/images/concepts.svg'
 import backendImg from '/images/backend.webp'
 import chatImg from '/images/chatweb.webp'
+import robotImg from '/images/robot.png'
 
 import Certf_Ing from '/images/certificates/Certificado_de_Titulo_y_Grado_Diego_González.png'
 import Diplomado_Fin from '/images/certificates/Certificado de Notas Diplomado de Finanzas.png'
@@ -75,6 +76,27 @@ const projects = [
     ],
     image: chatImg,
     source_code_link: "https://github.com/DiegoGonzalezBaeza/Hito6_Websocket_Patrones_Integracion_Empresarial",
+  },
+  {
+    name: "Agente de Voz con IA",
+    description:
+      "Desarrollo de un agente de voz utilizando Vapi y la biblioteca SpeechRecognition, que permite a los usuarios interactuar mediante comandos de voz para realizar diversas tareas. Se uso Firebase para el almacenamiento de preguntas y respuestas del usuario",
+    tags: [
+      {
+        name: "React",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Firebase",
+        color: "red-text-gradient",
+      },
+      {
+        name: "Vapi",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: robotImg,
+    source_code_link: "https://simulador-entrevistas-ia.vercel.app",
   }
 ]
 
