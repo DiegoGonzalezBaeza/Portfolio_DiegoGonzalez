@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
     ];
   
     // Obtén el elemento de la línea de tiempo
-    const educationTimeline = document.getElementById("Linea de tiempo de educación");
+    const educationTimeline = document.getElementById("education-timeline");
   
     if (educationTimeline) {
       // Función para crear un punto interactivo sin el año

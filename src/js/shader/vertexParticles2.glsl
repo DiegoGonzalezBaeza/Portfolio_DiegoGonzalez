@@ -12,7 +12,7 @@ void main() {
     float angle = atan(pos.y, pos.x);
 
     //  opasidad y oscuridad
-    vColor = vec4(-(angle))+ vec4(0.5 + 0.45*sin(angle+time*0.4));
+    vColor = vec4(-(angle)) + vec4(0.5 + 0.45*sin(angle+time*0.4));
 
 
     vec4 mvPosition = modelViewMatrix * vec4(pos.xyz, 1.);
